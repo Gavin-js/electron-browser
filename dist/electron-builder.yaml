@@ -1,0 +1,10 @@
+directories:
+  output: dist
+  buildResources: build
+productName: KK浏览器
+appId: com.kkguan.browser
+icon: ./resources/icon.ico
+win:
+  target:
+    - nsis
+electronVersion: 1.7.10

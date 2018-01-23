@@ -1,0 +1,35 @@
+{
+  "name": "electron-browser",
+  "version": "1.6.3",
+  "description": "electron浏览器",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron",
+    "browser",
+    "webview",
+    "react"
+  ],
+  "build": {
+    "productName": "electron浏览器",
+    "appId": "com.electron.browser",
+    "icon": "./resources/icon.ico",
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  },
+  "author": "Gavin",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^1.7.10",
+    "electron-builder": "^19.54.0",
+    "electron-prebuilt": "^1.4.13"
+  }
+}
