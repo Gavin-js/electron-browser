@@ -4,15 +4,10 @@
 
 **Install instructions**
 
-To run this code, follow these steps:
+run:
 
 ```
-git clone ssh://git@192.168.1.23:10022/Front-end/kk-browser.git
-cd kk-browser
-npm install
-npm start
+git clone https://github.com/Gavin-js/electron-browser.git
+cd electron-browser
+npm i && npm start
 ```
-
-**-- Plug --**
-
-If you're looking for an actively maintained electron-based browser with lots more features, check out [Beaker](https://github.com/beakerbrowser/beaker), my followup project.
