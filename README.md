@@ -1,6 +1,6 @@
 # kk-browser
 
-基于[!url=https://github.com/pfrazee/electron-browser]升级,添加打包配置
+基于 [electron-browser](https://github.com/pfrazee/electron-browser)升级,添加了打包配置.
 
 **Install instructions**
 
