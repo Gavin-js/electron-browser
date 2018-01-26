@@ -2,9 +2,9 @@
 
 基于 [electron-browser](https://github.com/pfrazee/electron-browser)升级,添加[electron-builder](https://github.com/electron-userland/electron-builder).
 
-**Install instructions**
+![./screenshot.jpg](./screenshot.jpg)
 
-run:
+**Install instructions**
 
 ```
 git clone https://github.com/Gavin-js/electron-browser.git
