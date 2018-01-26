@@ -12,12 +12,11 @@ app.on('window-all-closed', function() {
 
 app.on('ready', function () {
   mainWindow = new BrowserWindow({
-    width: 1030,
-     height: 720,
+      width: 1030,
+      height: 720,
       frame: false,
       icon:'./resources/icon.ico'
      })
-
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'browser.html'),

@@ -2,7 +2,7 @@ const electron = require('electron')
 const { ipcMain,ipcRenderer } = electron
 
 function setStatus (status) {
-  ipcRenderer.send('status', status)
+  ipcRenderer.sendToHost('status', status)
 }
 
 window.addEventListener('mouseover', function (e) {

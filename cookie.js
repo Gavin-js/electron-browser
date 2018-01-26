@@ -3,16 +3,19 @@ const md5 = require('./libs/md5')
 const os = require('./libs/getmac')
 const config = require('./config')
 const nodeos = require('os')
+
+
 //获取内网ip
 const getLocalIp = () => {
-    var map = []
-    var ifaces = nodeos.networkInterfaces();
+    let INTERNAL_IP = ''
+    var ifaces = nodeos.networkInterfaces()
     for (var dev in ifaces) {
-        if(ifaces[dev][1].address.indexOf('192.168') != -1) {
-            return ifaces[dev][1].address;
+      const ifacesObj = ifaces[dev][1] || ifaces[dev][0] || {}
+        if(ifacesObj.address.indexOf('192.168') != -1) {
+          return ifacesObj.address
         }
     }
-    return map
+    return INTERNAL_IP
 }
 const set = () => {
 
@@ -24,13 +27,14 @@ const set = () => {
     USERNAME
    } = process.env
 
+
   const cookieName = {
     COMPUTERNAME,
     PROCESSOR_ARCHITECTURE,
     PROCESSOR_IDENTIFIER,
     USERNAME,
-    IP:getLocalIp()
   }
+
    const setCookie = (name,value)=>{
      return new Promise((resolve, reject) => {
        session.defaultSession.cookies.set({ url:cookieUrl,domain : "gavinjs.com", name : name, value : value}, function(error) {
@@ -42,6 +46,9 @@ const set = () => {
        })
      })
    }
+  const INTERNAL_IP = getLocalIp()
+
+  setCookie("INTERNAL_IP",INTERNAL_IP)
 
   let salt = []
    Object.keys(cookieName).map((key)=>{
@@ -58,7 +65,6 @@ const set = () => {
     salt.push(`MAC=${mac}`)
 
     salt.push(`salt=${config.salt}`)
-
     salt.sort()
     setCookie("gavinjs_client_sign",md5(salt.join('&')))
   })
