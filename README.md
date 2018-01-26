@@ -1,6 +1,6 @@
 # electron-browser
 
-基于 [electron-browser](https://github.com/pfrazee/electron-browser)升级,添加了打包配置.
+基于 [electron-browser](https://github.com/pfrazee/electron-browser)升级,添加[electron-builder](https://github.com/electron-userland/electron-builder).
 
 **Install instructions**
 
